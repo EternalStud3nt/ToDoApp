@@ -3,14 +3,9 @@
   <ItemGroup>
     <ClInclude Include="include\Task.h" />
     <ClInclude Include="include\TaskManager.h" />
-    <ClInclude Include="test\catch_amalgamated.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Task.cpp" />
     <ClCompile Include="src\TaskManager.cpp" />
-    <ClCompile Include="src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".gitignore" />
   </ItemGroup>
 </Project>

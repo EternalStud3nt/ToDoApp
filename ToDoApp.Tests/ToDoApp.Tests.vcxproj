@@ -18,26 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\Task.h" />
-    <ClInclude Include="include\TaskManager.h" />
-    <ClInclude Include="test\catch_amalgamated.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Task.cpp" />
-    <ClCompile Include="src\TaskManager.cpp" />
-    <ClCompile Include="test\catch_amalgamated.cpp" />
-    <ClCompile Include="test\test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".gitignore" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9a2a0b5c-494e-4f40-b856-1533d7509966}</ProjectGuid>
-    <RootNamespace>ToDoApp</RootNamespace>
+    <ProjectGuid>{83b35f44-97c7-4a68-bb63-7d1aee75bd9e}</ProjectGuid>
+    <RootNamespace>ToDoAppTests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -117,7 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ToDoApp\include;$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,6 +123,18 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\catch_amalgamated.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\catch_amalgamated.cpp" />
+    <ClCompile Include="src\test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ToDoApp\ToDoApp.vcxproj">
+      <Project>{e8ea22c4-371b-4404-b2ae-5fac18ea7798}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
