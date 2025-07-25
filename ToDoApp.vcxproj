@@ -27,6 +27,8 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Task.cpp" />
     <ClCompile Include="src\TaskManager.cpp" />
+    <ClCompile Include="test\catch_amalgamated.cpp" />
+    <ClCompile Include="test\test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
