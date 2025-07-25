@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="include\Task.h" />
     <ClInclude Include="include\TaskManager.h" />
+    <ClInclude Include="test\catch_amalgamated.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
