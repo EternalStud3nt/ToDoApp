@@ -1,7 +1,7 @@
 #include "Task.h"
 #include <sstream>
 
-Task::Task(const std::string& title, bool done) : title(title), done(done) 
+Task::Task(const std::string& title, int id, bool done) : title(title), id(id), done(done) 
 {
 
 }
@@ -30,12 +30,12 @@ std::string Task::serialize() const
 	return oss.str();
 }
 
-Task Task::deserialize(const std::string& line) 
+Task Task::deserialize(const std::string& line)
 {
 	std::istringstream iss(line);
 	std::string title;
 	std::string doneStr;
-	if (std::getline(iss, title, ',') && std::getline(iss, doneStr)) 
+	if (std::getline(iss, title, ',') && std::getline(iss, doneStr))
 	{
 		bool done = (doneStr == "1");
 		return Task(title, done);
