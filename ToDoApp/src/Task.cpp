@@ -1,7 +1,7 @@
 #include "Task.h"
 #include <sstream>
 
-Task::Task(const std::string& title, int id, bool done) : title(title), id(id), done(done) 
+Task::Task(const std::string& title, int id) : title(title), id(id)
 {
 
 }

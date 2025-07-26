@@ -4,7 +4,7 @@
 class Task
 {
 public:
-	Task(const std::string& title, int id, bool done = false);
+	Task(const std::string& title, int id);
 
 	std::string getTitle() const;
 	bool isDone() const;
@@ -14,6 +14,6 @@ public:
 
 private:
 	std::string title;
-	bool done;
+	bool done = false;
 	int id;
 };

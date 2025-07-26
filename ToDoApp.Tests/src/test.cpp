@@ -5,29 +5,29 @@
 
 TEST_CASE("Task constructor and getters")
 {
-	Task task("Test task", false);
+	Task task("Test task", 0);
 	REQUIRE(task.getTitle() == "Test task");
-	REQUIRE(task.isDone() == false);
+	REQUIRE(task.isDone() == 0);
 
-	Task task1("Done task", true);
+	Task task1("Done task", 0);
 	REQUIRE(task1.getTitle() == "Done task");
-	REQUIRE(task1.isDone() == true);
+	REQUIRE(task1.isDone() == 0);
 }
 
 TEST_CASE("Task markDone")
 {
-	Task task("Incomplete task", false);
-	REQUIRE(task.isDone() == false);
+	Task task("Incomplete task", 0);
+	REQUIRE(task.isDone() == 0);
 	task.markDone();
-	REQUIRE(task.isDone() == true);
+	REQUIRE(task.isDone() == 0);
 }
 
 TEST_CASE("Task serializatioon task")
 {
-	Task task("Test task", false);
+	Task task("Test task", 0);
 	REQUIRE(task.serialize() == "Test task,0");
 
-	Task doneTask("Done task", true);
+	Task doneTask("Done task", 0);
 	REQUIRE(doneTask.serialize() == "Done task,1");
 }
 
@@ -35,11 +35,11 @@ TEST_CASE("Task deserialization")
 {
 	Task task = Task::deserialize("Not done task, 0");
 	REQUIRE(task.getTitle() == "Not done task");
-	REQUIRE(task.isDone() == false);
+	REQUIRE(task.isDone() == 0);
 
 	Task task2 = Task::deserialize("Done task,1");
 	REQUIRE(task2.getTitle() == "Done task");
-	REQUIRE(task2.isDone() == true);
+	REQUIRE(task2.isDone() == 0);
 }
 
 TEST_CASE("Task deserialization invalid format")
